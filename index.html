@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mocktail | Bar & Restaurant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header style="background-color: #033038" class="shadow-sm">
+      <nav class="navbar navbar-dark navbar-expand-lg container py-3">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#">MockTail</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavAltMarkup"
+          >
+            <div class="navbar-nav">
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="#home"
+                >Home</a
+              >
+              <a class="nav-link text-white" href="#">About</a>
+              <a class="nav-link text-white" href="#">Pricing</a>
+              <a class="nav-link text-white" href="#">Contact</a>
+              <button class="btn text-white rounded-0">RESERVATION</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section></section>
+    </header>
+    <main class="container mb-5">
+      <section class="my-5" id="home">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+                class="d-block w-100 rounded"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Day / Dinner / Drinks</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.unsplash.com/photo-1514361659284-59851c90d011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                class="d-block w-100 rounded"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Eat / Drink / Visit</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.unsplash.com/photo-1526596771131-d5f1dd861e10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1161&q=80"
+                class="d-block w-100 rounded"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Day / Dinner / Drinks</h5>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section class="search">
+        <div class="mb-5 w-75 mx-auto">
+          <label for="search-input" class="form-label fw-semibold text-white"
+            >Search Your Favorite Cocktail Here</label
+          >
+          <input
+            type="text"
+            class="form-control mt-1"
+            id="search-input"
+            placeholder="Enter Cocktail Name"
+          />
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="card-container"></div>
+      </section>
+      <!-- Spinner -->
+      <section class="d-none" id="spinner">
+        <div
+          style="height: 50vh"
+          class="d-flex justify-content-center align-items-center text-secondary"
+        >
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+      <!-- No Drink Found -->
+      <section class="d-none" id="no-drink">
+        <div class="fs-1 fw-semibold text-muted text-center mt-5 pt-5">
+          <p>No drink found by this name</p>
+        </div>
+      </section>
+      <!-- Show All Button -->
+      <section class="my-5 d-none text-center" id="show-all">
+        <button id="btn-show-all" class="btn btn-primary">Show all</button>
+      </section>
+      <!-- Modal -->
+      <section>
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="modal-title"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal-title"></h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body" id="modal-body"></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© 2020 Copyright Tahsin Karim</p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

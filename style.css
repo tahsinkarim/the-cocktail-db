@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Kaushan+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* font-family: 'Courier Prime', monospace;
+font-family: 'Poppins', sans-serif;
+font-family: 'Kaushan Script', cursive; */
+body {
+  background-color: #021b20;
+}
+.navbar-brand {
+  font-family: "Kaushan Script", cursive;
+  font-size: 30px;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav {
+  font-family: "Courier Prime", monospace;
+  font-size: 16px;
+}
+.navbar-nav .nav-link:hover {
+  color: #ffc7b6 !important;
+}
+.btn {
+  background-color: #1f40dd;
+  color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-in;
+  font-weight: 500;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.btn:hover {
+  background-color: #122685;
+}
+.carousel-inner {
+  max-height: 90vh;
+}
+.carousel-item h5 {
+  margin-bottom: 10rem;
+  font-size: 3rem;
+  font-family: "Courier Prime", monospace;
+  opacity: 0.8;
+}
+footer {
+  background-color: #033038;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+.card {
+  background-color: #033038;
+  border: 0;
+  color: white;
+}
+/* Modal */
+.modal-header,
+.modal-body,
+.modal-footer {
+  background-color: #033038;
+  color: #ffc7b6;
+}
